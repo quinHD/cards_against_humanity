@@ -1,0 +1,2 @@
+class CardSelection < ApplicationRecord
+end

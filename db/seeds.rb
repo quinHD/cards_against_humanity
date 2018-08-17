@@ -8,7 +8,9 @@ c5 = Card.create(statement: "Bebo para olvidar __gap__.", color: "black", user: 
 c6 = Card.create(statement: "SIDA", color: "white", user: u)
 c7 = Card.create(statement: "Manos de Jazz vigorosas.", color: "white", user: u)
 
-d1 = Deck.create(cards: [c1, c2, c3, c4, c5], user: u)
-d2 = Deck.create(cards: [c6, c7], user: u)
+d1 = Deck.create(cards: [c1, c2, c3, c4, c5])
+d2 = Deck.create(cards: [c6, c7])
 
 g = Game.create(decks: [d1])
+
+puts "Seeds completed"

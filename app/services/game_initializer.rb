@@ -1,18 +1,20 @@
 class GameInitializer
-  attr_reader :game
-
-  def initialize(decks)
+  def initialize(decks:, players:)
     @decks = decks
-    @game ||= Game.new
+    @players = players
   end
 
   def run
-    game.cards = cards
-    game.id ? true : game.save
+    game
   end
 
+  private
 
-  attr_reader :decks
+  attr_reader :decks, :players
+
+  def game
+    @_game ||= Game.new(cards: cards, players: players)
+  end
 
   def cards
     @_cards ||= Card.joins(:decks).where(decks: {id: decks}).distinct
